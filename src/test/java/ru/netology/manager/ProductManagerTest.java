@@ -27,29 +27,29 @@ class ProductManagerTest {
     }
 
     @Test
-    void shouldSearchAuthor() {
-        Product[] expected = {new Book(1, "War and Peace", 250, "Leo Tolstoy")};
+    void shouldSearchByAuthor() {
+        Product[] expected = new Product[]{productOne};
         Product[] actual = manager.searchBy("Leo Tolstoy");
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void shouldSearchBookName() {
-        Product[] expected =  {new Book(2, "The Colour of Magic", 200, "Terry Pratchett")};
+    void shouldSearchByBookName() {
+        Product[] expected = new Product[]{productTwo};
         Product[] actual = manager.searchBy("The Colour of Magic");
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void shouldSearchSmarthoneName() {
-        Product[] expected = {new Smartphone(4, "Galaxy S20", 60000, "Samasung")};
+    void shouldSearchBySmarthoneName() {
+        Product[] expected = new Product[]{productFour};
         Product[] actual = manager.searchBy("Galaxy S20");
         assertArrayEquals(expected, actual);
     }
 
     @Test
-    void shouldSearchManufacturer() {
-        Product[] expected =  {new Smartphone(3, "510", 7000, "Motorolla")};
+    void shouldSearchByManufacturer() {
+        Product[] expected = new Product[]{productThree};
         Product[] actual = manager.searchBy("Motorolla");
         assertArrayEquals(expected, actual);
     }

@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Smartphone extends Product {
     private String manufacturer;
 
-    public Smartphone(){
+    public Smartphone() {
         super();
     }
 
@@ -41,5 +41,10 @@ public class Smartphone extends Product {
         return "Smartphone{" +
                 "producer='" + manufacturer + '\'' +
                 "} " + super.toString();
+    }
+
+    @Override
+    public boolean matches(String search) {
+        return super.matches(search) || this.getManufacturer().equalsIgnoreCase(search);
     }
 }
