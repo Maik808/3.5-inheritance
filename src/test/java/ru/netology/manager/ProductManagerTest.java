@@ -53,4 +53,11 @@ class ProductManagerTest {
         Product[] actual = manager.searchBy("Motorolla");
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    void shouldNotSearchManufacturer() {
+        Product[] expected = new Product[0];
+        Product[] actual = manager.searchBy("Moto");
+        assertArrayEquals(expected, actual);
+    }
 }
